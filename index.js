@@ -3,8 +3,6 @@ const axios = require('axios');
 const fs = require('fs');
 const multer = require('multer');
 const FormData = require('form-data');
-const favicon = require("serve-favicon");
-const path = require("path");
 
 const app = express();
 const port = 3000;
@@ -12,7 +10,6 @@ const port = 3000;
 // middleware
 app.set("view engine", "ejs");
 app.use("/static", express.static("public"));
-app.use(favicon(path.join(__dirname, "/public/zanixon-icon.webp")));
 const upload = multer({ dest: 'uploads/' });
 
 // main page
