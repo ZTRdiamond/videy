@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Videy Clone</title>
+</head>
+<body>
+  <h1>Videy Clone Website</h1>
+  <p class="lead">Website uploader alternatif videy.co</p>
+  <p class="lead">Lo upload sini aja tot klo kagak mau kena iklan bokep!</p>
+  
+  <!-- Upload  -->
+<p class="error"><%= data?.message || "" %></p>
+<% if (data.url) { %>
+  <video controls class="video">
+    <source src="<%= data.url %>" type="video/mp4">
+    Your browser does not support the video embed.
+  </video>
+  <div class="container">
+    <div class="row justify-content-center align-items-center box">
+      <form class="link d-flex">
+        <input
+          type="text"
+          class="form-control form-control-lg me-2 text-center coupon"
+          value="<%= data?.url %>"
+          readonly
+        />
+        <button class="btn btn-outline-light" id="copyButton">Copy</button>
+      </form>
+    </div>
+  </div>
+  <a href="/" class="btn btn-primary">Upload another video</a>
+<% } else { %>
+  <form id="file-upload-form" class="uploader" action="/" method="post" enctype="multipart/form-data">
+    <label for="file-upload" id="file-drag">
+      <input id="file-upload" type="file" name="file" accept="video/*" onchange="displayFileName(this)" />
+      <div id="start">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        <div id="file-name">Select a video or drag video here</div>
+      </div>
+    </label>
+    <button type="submit" id="file-upload-btn" class="btn btn-primary hidden">Upload</button>
+  </form>
+<% } %>
+  <footer>
+    <div class="container">
+      <p>Build with 💖, Express, Ejs, and JavaScript.</p>
+      <p>Copyright &copy; <a href="https://github.com/ZTRdiamond" target="__blank">ZTRdiamond</a> 2024. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    function displayFileName(input) {
+      const fileNameDisplay = document.getElementById('file-name');
+      fileNameDisplay.textContent = input.files[0].name;
+    }
+    
+document.getElementById("copyButton").addEventListener("click", function(event) {
+  event.preventDefault(); // Mencegah tindakan standar dari form input
+  copyText();
+});
+
+function copyText() {
+  const coupon = document.querySelector(".coupon");
+  coupon.select();
+  document.execCommand('copy');
+  const btn = event.target;
+  btn.textContent = 'Copied';
+  setTimeout(() => {
+    btn.textContent = 'Copy';
+  }, 2000);
+}
+  </script>
+</body>
+</html>

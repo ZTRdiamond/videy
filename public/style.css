@@ -1,0 +1,219 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html,body,* {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Roboto;
+}
+
+html,body {
+  height: 100%;
+  text-align: center;
+}
+
+body {
+  padding: 2rem;
+  background: #f8f8f8;
+}
+
+a {
+  text-decoration: none;
+  color: #01bdff;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: #01bdff;
+  margin-bottom: 0;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #101010;
+}
+
+.error {
+  font-family: Roboto;
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.video {
+  max-width: 80%;
+  border-radius: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.link input[type="text"] {
+  border: 2px solid #01bdff;
+  padding: .6rem;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.uploader {
+  display: block;
+  clear: both;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.uploader label {
+  float: left;
+  clear: both;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  border: 3px solid #eee;
+  transition: all .2s ease;
+  user-select: none;
+}
+
+.uploader label:hover {
+  border-color: #01bdff;
+}
+
+.uploader label.hover {
+  border: 3px solid #01bdff;
+  box-shadow: inset 0 0 0 6px #eee;
+}
+
+.uploader label.hover #start i.fa {
+  transform: scale(0.8);
+  opacity: 0.3;
+}
+
+.uploader #start {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+
+.uploader #start.hidden {
+  display: none;
+}
+
+.uploader #start i.fa {
+  font-size: 50px;
+  margin-bottom: 1rem;
+  transition: all .2s ease-in-out;
+}
+
+.uploader #response {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+
+.uploader #response.hidden {
+  display: none;
+}
+
+.uploader #response #messages {
+  margin-bottom: .5rem;
+}
+
+.uploader #file-video {
+  display: inline;
+  margin: 0 auto .5rem auto;
+  width: auto;
+  height: auto;
+  max-width: 180px;
+}
+
+.uploader #file-video.hidden {
+  display: none;
+}
+
+.uploader #notvideo {
+  display: block;
+  float: left;
+  clear: both;
+  width: 100%;
+}
+
+.uploader #notvideo.hidden {
+  display: none;
+}
+
+.progress,
+.progress {
+  appearance: none;
+  display: inline;
+  clear: both;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 180px;
+  height: 8px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+div {
+  margin: 0 0 .5rem 0;
+  color: #101010;
+}
+
+.btn {
+  display: inline-block;
+  margin: .5rem .5rem 1rem .5rem;
+  clear: both;
+  font-family: "Roboto";
+  font-weight: 800;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: initial;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  padding: 0 1rem;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  background: #01bdff;
+  border-color: #01bdff;
+  cursor: pointer;
+}
+
+.copy-text-container button {
+  display: inline-block;
+  margin: .5rem .5rem 1rem .5rem;
+  clear: both;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: initial;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  padding: 5px 10px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  background: #01bdff;
+  border-color: #01bdff;
+  cursor: pointer;
+}
