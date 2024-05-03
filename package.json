@@ -23,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/ZTRdiamond/videy/issues"
   },
-  "homepage": "https://github.com/ZTRdiamond/videy#readme"
+  "homepage": "https://github.com/ZTRdiamond/videy#readme",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "form-data": "^4.0.0",
+    "fs": "^0.0.1-security",
+    "multer": "^1.4.5-lts.1"
+  }
 }
