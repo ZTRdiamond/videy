@@ -3,6 +3,7 @@ const axios = require('axios');
 const fs = require('fs');
 const multer = require('multer');
 const FormData = require('form-data');
+const favicon = require("serve-favicon");
 
 const app = express();
 const port = 3000;
