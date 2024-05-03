@@ -11,7 +11,7 @@ const port = 3000;
 // middleware
 app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
-app.use(express.static("public"));
+app.use("/static", express.static("public"));
 const upload = multer();
 
 // main page
