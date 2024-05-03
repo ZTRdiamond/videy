@@ -10,7 +10,7 @@ const port = 3000;
 // middleware
 app.set("view engine", "ejs");
 app.use("/static", express.static("public"));
-const upload = multer({ dest: 'uploads/' });
+const upload = multer();
 
 // main page
 app.get('/', (req, res) => {
@@ -22,11 +22,11 @@ app.get('/', (req, res) => {
 // Handle file upload
 app.post('/', upload.single('file'), async (req, res) => {
   try {
-    if(!req?.file?.path) return res.render("index", { data: {
+    if(!req?.file?.buffer) return res.render("index", { data: {
       message: "Please select a video to upload!"
     }})
     const formData = new FormData();
-    formData.append('file', fs.createReadStream(req?.file?.path), {
+    formData.append('file', req?.file?.buffer, {
       filename: Date.now() + ".mp4", // Specify original filename
       contentType: req.file.mimetype, // Specify content type
     });
@@ -37,8 +37,6 @@ app.post('/', upload.single('file'), async (req, res) => {
       },
     });
 
-    // Delete the temporary file after upload
-    fs.unlinkSync(req?.file?.path);
     const id = response.data.id;
     res.render("index", { data: {
       message: "",
